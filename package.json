@@ -1,0 +1,10 @@
+{
+  "name": "patrick-yao-website",
+  "private": true,
+  "scripts": {
+    "thumbs": "node scripts/generate-gallery-thumbs.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}

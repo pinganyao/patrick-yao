@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Environment / secrets (if you add any later)
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+
+# Generated at deploy time by Vercel (npm run thumbs)
+gallery/thumbs/
+
+# Unused asset (not referenced in site)
+IMG_6867.jpeg

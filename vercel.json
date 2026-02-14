@@ -1,0 +1,17 @@
+{
+  "installCommand": "npm install",
+  "buildCommand": "npm run thumbs",
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/works", "destination": "/works.html" },
+    { "source": "/gallery", "destination": "/gallery.html" },
+    { "source": "/contact", "destination": "/contact.html" }
+  ],
+  "redirects": [
+    { "source": "/about.html", "destination": "/about", "permanent": true },
+    { "source": "/works.html", "destination": "/works", "permanent": true },
+    { "source": "/gallery.html", "destination": "/gallery", "permanent": true },
+    { "source": "/contact.html", "destination": "/contact", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true }
+  ]
+}
