@@ -36,6 +36,7 @@ async function main() {
 
     try {
       await sharp(srcPath)
+        .rotate() // Apply EXIF orientation so thumbs match how full-size displays
         .resize(MAX_WIDTH, null, { withoutEnlargement: true })
         .jpeg({ quality: JPEG_QUALITY })
         .toFile(destPath);
