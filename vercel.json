@@ -1,6 +1,7 @@
 {
   "installCommand": "npm install",
   "buildCommand": "npm run thumbs",
+  "outputDirectory": ".",
   "rewrites": [
     { "source": "/about", "destination": "/about.html" },
     { "source": "/works", "destination": "/works.html" },
