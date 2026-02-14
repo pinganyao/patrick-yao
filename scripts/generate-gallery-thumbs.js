@@ -24,13 +24,21 @@ async function main() {
 
   fs.mkdirSync(THUMBS_DIR, { recursive: true });
 
+  // Remove existing thumbs from previous runs so only current gallery images have thumbs
+  if (fs.existsSync(THUMBS_DIR)) {
+    fs.readdirSync(THUMBS_DIR).forEach((f) => {
+      const p = path.join(THUMBS_DIR, f);
+      if (fs.statSync(p).isFile()) fs.unlinkSync(p);
+    });
+  }
+
   const files = fs.readdirSync(GALLERY_DIR).filter((f) => IMAGE_EXT.test(f) && !f.startsWith('.'));
 
   console.log(`Generating ${files.length} thumbnails in gallery/thumbs/ ...`);
 
   for (const file of files) {
     const srcPath = path.join(GALLERY_DIR, file);
-    const ext = path.extname(file).toLowerCase();
+    const ext = path.extname(file); // use actual extension so basename strips correctly (avoids .JPG → .JPG.jpg)
     const base = path.basename(file, ext);
     const destPath = path.join(THUMBS_DIR, base + '.jpg');
 
