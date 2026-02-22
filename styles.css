@@ -117,7 +117,13 @@ body {
 .nav-logo {
     height: 1.75rem;
     width: auto;
-    filter: invert(1); /* pingan.svg is black; always show white in nav */
+    filter: invert(1); /* white on dark header */
+}
+
+@media (prefers-color-scheme: light) {
+    .nav-logo {
+        filter: none; /* dark on light header */
+    }
 }
 
 .nav {
@@ -315,13 +321,11 @@ main {
 .about-image-wrap {
     width: 100%;
     max-width: 560px;
-    margin: 0 auto -1.5rem;
+    margin: 0 auto 1.5rem;
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    mask-image: radial-gradient(ellipse 63% 63% at 55% 40%, black 43%, transparent 73%);
-    -webkit-mask-image: radial-gradient(ellipse 63% 63% at 55% 40%, black 43%, transparent 73%);
-    mask-size: 100% 100%;
-    -webkit-mask-size: 100% 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border);
 }
 
 .about-image {
@@ -329,7 +333,7 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 50% 25%;
+    object-position: 50% 8%;
     filter: brightness(1.15) contrast(1.05);
 }
 
