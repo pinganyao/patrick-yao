@@ -17,7 +17,7 @@
     <meta name="twitter:image" content="https://www.yaopingan.com/patrick.jpg">
     <title>Contact — Patrick Yao</title>
     <link rel="canonical" href="https://www.yaopingan.com/contact">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="pingan2.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/font/Typewriter/cmun-typewriter.css">
 </head>
@@ -27,7 +27,7 @@
     <header class="site-header">
         <nav class="nav">
             <a href="/" class="nav-brand" aria-label="Home">
-                <img src="PY.svg" alt="Patrick Yao" class="nav-logo">
+                <img src="pingan.svg" alt="Patrick Yao" class="nav-logo">
             </a>
             <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
                 <span class="nav-toggle-bar"></span>
@@ -46,6 +46,9 @@
 
     <main class="contact-page">
         <section class="contact-hero">
+            <button type="button" class="contact-hero-logo-btn" aria-label="About the logo">
+                <img src="pingan.svg" alt="" class="contact-hero-logo" aria-hidden="true">
+            </button>
             <p class="contact-hero-label">Get in touch</p>
             <h1 class="contact-hero-title">Contact</h1>
             <div class="contact-details">
@@ -102,10 +105,48 @@
         </div>
     </main>
 
+    <div class="logo-card-overlay" id="logo-card-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="About the logo">
+        <div class="logo-card">
+            <button type="button" class="logo-card-close" aria-label="Close">&times;</button>
+            <img src="pingan.svg" alt="" class="logo-card-img">
+            <p class="logo-card-text">The logo includes the characters of my Chinese name, Pingan (平安), which means "peace". The design is based on a Chinese seal carved for me by my friend, Zhihan Mao.</p>
+        </div>
+    </div>
+
     <footer class="site-footer">
         <p>© 2026 Patrick Yao</p>
     </footer>
     <script src="nav.js"></script>
+    <script>
+        (function() {
+            var overlay = document.getElementById('logo-card-overlay');
+            var openBtn = document.querySelector('.contact-hero-logo-btn');
+            var closeBtn = overlay && overlay.querySelector('.logo-card-close');
+            if (!overlay || !openBtn) return;
+
+            function openCard() {
+                overlay.setAttribute('aria-hidden', 'false');
+                overlay.classList.add('logo-card-overlay--open');
+                document.body.style.overflow = 'hidden';
+                if (closeBtn) closeBtn.focus();
+            }
+
+            function closeCard() {
+                overlay.setAttribute('aria-hidden', 'true');
+                overlay.classList.remove('logo-card-overlay--open');
+                document.body.style.overflow = '';
+            }
+
+            openBtn.addEventListener('click', openCard);
+            if (closeBtn) closeBtn.addEventListener('click', closeCard);
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) closeCard();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && overlay.classList.contains('logo-card-overlay--open')) closeCard();
+            });
+        })();
+    </script>
     <script defer src="/_vercel/insights/script.js"></script>
     <script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
     <script defer src="/_vercel/speed-insights/script.js"></script>

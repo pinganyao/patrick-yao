@@ -12,6 +12,17 @@
     --font-main: 'Computer Modern Typewriter', 'CMU Typewriter', monospace;
 }
 
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #f5f5f5;
+        --bg-subtle: #eee;
+        --text: #1a1a1a;
+        --text-muted: #555;
+        --accent: #444;
+        --border: #ddd;
+    }
+}
+
 *,
 *::before,
 *::after {
@@ -20,6 +31,7 @@
 
 html {
     scroll-behavior: smooth;
+    color-scheme: light dark;
 }
 
 body {
@@ -85,6 +97,12 @@ body {
     padding: 1.5rem 3rem;
 }
 
+@media (prefers-color-scheme: light) {
+    .site-header {
+        background: rgba(255, 255, 255, 0.92);
+    }
+}
+
 .nav-brand {
     display: flex;
     align-items: center;
@@ -99,7 +117,7 @@ body {
 .nav-logo {
     height: 1.75rem;
     width: auto;
-    filter: invert(1);
+    filter: invert(1); /* pingan.svg is black; always show white in nav */
 }
 
 .nav {
@@ -1064,9 +1082,39 @@ main {
 
 .contact-hero {
     text-align: center;
-    padding: 3rem 2rem 3rem;
+    padding: 2rem 2rem 3rem;
     border-bottom: 1px solid var(--border);
     position: relative;
+}
+
+.contact-hero-logo-btn {
+    display: block;
+    margin: 0 auto 2.25rem;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    line-height: 0;
+}
+
+.contact-hero-logo-btn:hover .contact-hero-logo,
+.contact-hero-logo-btn:focus-visible .contact-hero-logo {
+    opacity: 0.85;
+}
+
+.contact-hero-logo {
+    display: block;
+    height: clamp(3.5rem, 10vw, 5.5rem);
+    width: auto;
+    margin: 0;
+    filter: invert(1); /* white on dark */
+    transition: opacity 0.2s ease;
+}
+
+@media (prefers-color-scheme: light) {
+    .contact-hero-logo {
+        filter: none; /* black on light */
+    }
 }
 
 .contact-hero::before {
@@ -1075,6 +1123,83 @@ main {
     inset: 0;
     background: radial-gradient(ellipse 70% 60% at 50% 30%, rgba(255, 255, 255, 0.04) 0%, transparent 55%);
     pointer-events: none;
+}
+
+/* Logo pop-up card */
+.logo-card-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.logo-card-overlay--open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.logo-card {
+    position: relative;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.logo-card-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-card-close:hover {
+    opacity: 1;
+}
+
+.logo-card-img {
+    display: block;
+    height: 8rem;
+    width: auto;
+    margin: 0 auto 1.5rem;
+    filter: invert(1);
+}
+
+@media (prefers-color-scheme: light) {
+    .logo-card-img {
+        filter: none;
+    }
+}
+
+.logo-card-text {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text);
+    margin: 0;
 }
 
 .contact-hero-label {
@@ -1265,7 +1390,7 @@ main {
     }
 
     .contact-hero {
-        padding: 2rem 1rem 2.5rem;
+        padding: 1.5rem 1rem 2.5rem;
     }
 
     .contact-detail-card {
