@@ -5,12 +5,15 @@
   "rewrites": [
     {"source": "/about", "destination": "/about.html"},
     {"source": "/works", "destination": "/works.html"},
+    {"source": "/writings", "destination": "/writings.html"},
+    {"source": "/writings/on-model-united-nations", "destination": "/Writings/blog1.html"},
     {"source": "/gallery", "destination": "/gallery.html"},
     {"source": "/contact", "destination": "/contact.html"}
   ],
   "redirects": [
     {"source": "/about.html", "destination": "/about", "permanent": true},
     {"source": "/works.html", "destination": "/works", "permanent": true},
+    {"source": "/writings.html", "destination": "/writings", "permanent": true},
     {"source": "/gallery.html", "destination": "/gallery", "permanent": true},
     {"source": "/contact.html", "destination": "/contact", "permanent": true},
     {"source": "/index.html", "destination": "/", "permanent": true}
