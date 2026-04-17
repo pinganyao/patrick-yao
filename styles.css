@@ -632,6 +632,35 @@ main {
     margin-bottom: 0;
 }
 
+.work-event-info-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.25rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    vertical-align: middle;
+    opacity: 0.75;
+}
+
+.work-event-info-btn:hover,
+.work-event-info-btn:focus-visible {
+    opacity: 1;
+}
+
+.work-event-info-btn:focus-visible {
+    outline: 2px solid var(--text, currentColor);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+.work-event-info-icon {
+    display: block;
+}
+
 .works-videos-intro {
     font-size: 0.9rem;
     color: var(--text-muted);
