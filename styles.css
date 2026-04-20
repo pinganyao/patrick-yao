@@ -498,6 +498,18 @@ main {
     -webkit-backdrop-filter: blur(2px);
 }
 
+:root[data-theme='dark'] .work-project-year {
+    color: #f5f5f5;
+    background: rgba(10, 10, 10, 0.72);
+    border-color: rgba(255, 255, 255, 0.32);
+}
+
+:root[data-theme='light'] .work-project-year {
+    color: #111;
+    background: rgba(255, 255, 255, 0.82);
+    border-color: rgba(0, 0, 0, 0.22);
+}
+
 @media (prefers-color-scheme: light) {
     .work-project-year {
         color: #111;
@@ -1498,6 +1510,14 @@ main {
     transition: opacity 0.2s ease;
 }
 
+:root[data-theme='dark'] .contact-hero-logo {
+    filter: invert(1);
+}
+
+:root[data-theme='light'] .contact-hero-logo {
+    filter: none;
+}
+
 @media (prefers-color-scheme: light) {
     .contact-hero-logo {
         filter: none; /* black on light */
@@ -1574,6 +1594,14 @@ main {
     width: auto;
     margin: 0 auto 1.5rem;
     filter: invert(1);
+}
+
+:root[data-theme='dark'] .logo-card-img {
+    filter: invert(1);
+}
+
+:root[data-theme='light'] .logo-card-img {
+    filter: none;
 }
 
 @media (prefers-color-scheme: light) {
