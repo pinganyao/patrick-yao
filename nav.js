@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateThemeButton(themeButton) {
         const activeTheme = root.getAttribute('data-theme') || currentSystemTheme();
-        themeButton.textContent = activeTheme === 'dark' ? '☾' : '☀';
+    themeButton.textContent = activeTheme === 'dark' ? '☾' : '☀︎';
         themeButton.setAttribute('aria-label', 'Switch to ' + (activeTheme === 'dark' ? 'light' : 'dark') + ' mode');
         themeButton.setAttribute('title', 'Switch to ' + (activeTheme === 'dark' ? 'light' : 'dark') + ' mode');
     }
