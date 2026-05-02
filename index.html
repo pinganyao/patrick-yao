@@ -21,17 +21,30 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Patrick Yao",
-      "url": "https://www.yaopingan.com",
-      "jobTitle": "Musician, Researcher",
-      "description": "Pianist, composer, and songwriter. Focus in computer science and music technology. Research interests include computer music, sound design, and human-machine interaction.",
-      "image": "https://www.yaopingan.com/patrick.jpg",
-      "sameAs": [
-        "https://www.instagram.com/ytpyao/",
-        "https://www.youtube.com/@patrickyao/videos",
-        "https://github.com/pinganyao",
-        "https://www.linkedin.com/in/pinganyao/"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.yaopingan.com/#website",
+          "url": "https://www.yaopingan.com/",
+          "name": "Patrick Yao",
+          "alternateName": ["yaopingan.com"],
+          "publisher": { "@id": "https://www.yaopingan.com/#person" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.yaopingan.com/#person",
+          "name": "Patrick Yao",
+          "url": "https://www.yaopingan.com/",
+          "jobTitle": "Musician, Researcher",
+          "description": "Pianist, composer, and songwriter. Focus in computer science and music technology. Research interests include computer music, sound design, and human-machine interaction.",
+          "image": "https://www.yaopingan.com/patrick.jpg",
+          "sameAs": [
+            "https://www.instagram.com/ytpyao/",
+            "https://www.youtube.com/@patrickyao/videos",
+            "https://github.com/pinganyao",
+            "https://www.linkedin.com/in/pinganyao/"
+          ]
+        }
       ]
     }
     </script>
