@@ -6,7 +6,8 @@
     {"source": "/about", "destination": "/about.html"},
     {"source": "/works", "destination": "/works.html"},
     {"source": "/writings", "destination": "/writings.html"},
-    {"source": "/writings/on-model-united-nations", "destination": "/Writings/blog1.html"},
+    {"source": "/writings/on-language", "destination": "/writings/on-language.html"},
+    {"source": "/writings/on-mun", "destination": "/writings/on-mun.html"},
     {"source": "/gallery", "destination": "/gallery.html"},
     {"source": "/contact", "destination": "/contact.html"}
   ],
@@ -14,6 +15,7 @@
     {"source": "/about.html", "destination": "/about", "permanent": true},
     {"source": "/works.html", "destination": "/works", "permanent": true},
     {"source": "/writings.html", "destination": "/writings", "permanent": true},
+    {"source": "/writings/on-model-united-nations", "destination": "/writings/on-mun", "permanent": true},
     {"source": "/gallery.html", "destination": "/gallery", "permanent": true},
     {"source": "/contact.html", "destination": "/contact", "permanent": true},
     {"source": "/index.html", "destination": "/", "permanent": true}
