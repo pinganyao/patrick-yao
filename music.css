@@ -1,0 +1,247 @@
+/* Music page — editorial layout (music.html only) */
+
+body.music-page main {
+    max-width: 1040px;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+}
+
+.music-header {
+    margin-bottom: 3.5rem;
+}
+
+.music-header-title {
+    margin: 0 0 0.65rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: bold;
+    letter-spacing: 0.18em;
+    line-height: 1.15;
+}
+
+.music-header-intro {
+    margin: 0;
+    max-width: 36rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+.music-layout {
+    display: grid;
+    grid-template-columns: 9.5rem minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+}
+
+.music-nav {
+    position: sticky;
+    top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding-top: 0.35rem;
+}
+
+.music-nav-link {
+    font-size: 0.68rem;
+    font-weight: bold;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.music-nav-link:hover {
+    color: var(--text);
+}
+
+.music-nav-link--active {
+    color: var(--text);
+}
+
+.music-content .works-section {
+    padding: 0 0 4rem;
+    scroll-margin-top: 6rem;
+}
+
+.music-content .works-section:last-child {
+    padding-bottom: 0;
+}
+
+.music-content .works-section + .works-section {
+    border-top: 1px solid var(--border);
+    padding-top: 3.5rem;
+}
+
+body.music-page .works-section-title {
+    margin: 0 0 2rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    color: var(--text-muted);
+}
+
+/* Projects */
+body.music-page .works-projects-grid {
+    gap: 2rem;
+}
+
+body.music-page .work-project-card {
+    border: none;
+    background: transparent;
+}
+
+body.music-page .work-project-image {
+    border: 1px solid var(--border);
+}
+
+body.music-page .work-project-details {
+    padding: 1rem 0 0;
+}
+
+/* Compositions — catalog list */
+body.music-page .works-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--border);
+}
+
+body.music-page .work-card {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr minmax(5.5rem, auto);
+    gap: 1.25rem 1.5rem;
+    align-items: baseline;
+    padding: 0.95rem 0;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    background: transparent;
+}
+
+body.music-page .work-card:hover {
+    border-color: var(--border);
+}
+
+body.music-page .work-year {
+    margin: 0;
+    font-size: 0.72rem;
+}
+
+body.music-page .work-meta {
+    text-align: right;
+}
+
+/* Performances */
+body.music-page .works-timeline::before {
+    left: 3.25rem;
+}
+
+body.music-page .work-event {
+    grid-template-columns: 3.25rem 1fr;
+    gap: 2rem;
+    padding: 1.15rem 0;
+    border-bottom: none;
+}
+
+body.music-page .work-event + .work-event {
+    border-top: 1px solid var(--border);
+}
+
+body.music-page .work-event-year {
+    text-align: right;
+    padding-top: 0.2rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+}
+
+/* Videos */
+body.music-page .works-videos-intro {
+    margin-bottom: 2rem;
+}
+
+body.music-page .works-videos-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem 1.5rem;
+}
+
+body.music-page .work-video-thumb img {
+    border: 1px solid var(--border);
+    filter: grayscale(25%);
+    transition: filter 0.25s ease;
+}
+
+body.music-page .work-video-thumb:hover img,
+body.music-page .work-video-thumb:focus-visible img {
+    filter: grayscale(0%);
+}
+
+body.music-page .work-video-title {
+    margin-top: 0.85rem;
+}
+
+.music-videos-loading,
+.music-videos-error {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.music-videos-error a {
+    color: var(--text);
+}
+
+.works-videos-grid[data-loading] {
+    display: block;
+}
+
+@media (max-width: 860px) {
+    body.music-page .works-videos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .music-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .music-nav {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.25rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    body.music-page .work-card {
+        grid-template-columns: 3.5rem 1fr;
+        gap: 0.35rem 1rem;
+    }
+
+    body.music-page .work-meta {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    body.music-page .works-timeline::before {
+        display: none;
+    }
+
+    body.music-page .work-event {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+    }
+
+    body.music-page .work-event-year {
+        text-align: left;
+    }
+}
+
+@media (max-width: 520px) {
+    body.music-page .works-projects-grid,
+    body.music-page .works-videos-grid {
+        grid-template-columns: 1fr;
+    }
+}

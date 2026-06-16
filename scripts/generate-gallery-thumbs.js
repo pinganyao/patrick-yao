@@ -1,7 +1,7 @@
 /**
  * Generates thumbnails for the gallery. Run: npm run thumbs
- * - Reads images from gallery/
- * - Writes resized images to gallery/thumbs/ (max 720px width, JPEG quality 82)
+ * - Reads images from assets/gallery/
+ * - Writes resized images to assets/gallery/thumbs/ (max 720px width, JPEG quality 82)
  * - Grid shows thumbs; lightbox loads full-size on click
  */
 
@@ -9,7 +9,7 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 
-const GALLERY_DIR = path.join(__dirname, '..', 'gallery');
+const GALLERY_DIR = path.join(__dirname, '..', 'assets', 'gallery');
 const THUMBS_DIR = path.join(GALLERY_DIR, 'thumbs');
 const MAX_WIDTH = 720;
 const JPEG_QUALITY = 82;
@@ -34,7 +34,7 @@ async function main() {
 
   const files = fs.readdirSync(GALLERY_DIR).filter((f) => IMAGE_EXT.test(f) && !f.startsWith('.'));
 
-  console.log(`Generating ${files.length} thumbnails in gallery/thumbs/ ...`);
+  console.log(`Generating ${files.length} thumbnails in assets/gallery/thumbs/ ...`);
 
   for (const file of files) {
     const srcPath = path.join(GALLERY_DIR, file);
@@ -54,7 +54,7 @@ async function main() {
     }
   }
 
-  console.log('Done. Thumbnails saved to gallery/thumbs/');
+  console.log('Done. Thumbnails saved to assets/gallery/thumbs/');
 }
 
 main();

@@ -13,4 +13,4 @@ Thumbs.db
 node_modules/
 
 # Unused asset (not referenced in site)
-IMG_6867.jpeg
+assets/IMG_6867.jpeg

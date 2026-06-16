@@ -4,7 +4,7 @@
   "outputDirectory": ".",
   "rewrites": [
     {"source": "/about", "destination": "/about.html"},
-    {"source": "/works", "destination": "/works.html"},
+    {"source": "/music", "destination": "/music.html"},
     {"source": "/writings", "destination": "/writings.html"},
     {"source": "/writings/on-language", "destination": "/writings/on-language.html"},
     {"source": "/writings/on-mun", "destination": "/writings/on-mun.html"},
@@ -13,11 +13,22 @@
   ],
   "redirects": [
     {"source": "/about.html", "destination": "/about", "permanent": true},
-    {"source": "/works.html", "destination": "/works", "permanent": true},
+    {"source": "/music.html", "destination": "/music", "permanent": true},
+    {"source": "/works", "destination": "/music", "permanent": true},
+    {"source": "/works.html", "destination": "/music", "permanent": true},
     {"source": "/writings.html", "destination": "/writings", "permanent": true},
     {"source": "/writings/on-model-united-nations", "destination": "/writings/on-mun", "permanent": true},
     {"source": "/gallery.html", "destination": "/gallery", "permanent": true},
     {"source": "/contact.html", "destination": "/contact", "permanent": true},
-    {"source": "/index.html", "destination": "/", "permanent": true}
+    {"source": "/index.html", "destination": "/", "permanent": true},
+    {"source": "/patrick.jpg", "destination": "/assets/patrick.jpg", "permanent": true},
+    {"source": "/patrick-yao.pdf", "destination": "/assets/patrick-yao.pdf", "permanent": true},
+    {"source": "/favicon.svg", "destination": "/assets/favicon.svg", "permanent": true},
+    {"source": "/PY.svg", "destination": "/assets/PY.svg", "permanent": true},
+    {"source": "/pingan.svg", "destination": "/assets/pingan.svg", "permanent": true},
+    {"source": "/beach.jpg", "destination": "/assets/beach.jpg", "permanent": true},
+    {"source": "/aegean.jpg", "destination": "/assets/aegean.jpg", "permanent": true},
+    {"source": "/piano.jpeg", "destination": "/assets/piano.jpeg", "permanent": true},
+    {"source": "/gallery/:path*", "destination": "/assets/gallery/:path*", "permanent": true}
   ]
 }

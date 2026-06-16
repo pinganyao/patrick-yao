@@ -4,30 +4,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Works by Patrick Yao — compositions, videos, and performances. Music, research, and creative projects.">
+    <meta name="description" content="Music by Patrick Yao — compositions, videos, and performances. Music, research, and creative projects.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Patrick Yao">
-    <meta property="og:title" content="Works — Patrick Yao">
+    <meta property="og:title" content="Music — Patrick Yao">
     <meta property="og:description" content="Compositions, videos, and performances by Patrick Yao.">
-    <meta property="og:image" content="https://www.yaopingan.com/patrick.jpg">
-    <meta property="og:url" content="https://www.yaopingan.com/works">
+    <meta property="og:image" content="https://www.yaopingan.com/assets/patrick.jpg">
+    <meta property="og:url" content="https://www.yaopingan.com/music">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Works — Patrick Yao">
+    <meta name="twitter:title" content="Music — Patrick Yao">
     <meta name="twitter:description" content="Compositions, videos, and performances by Patrick Yao.">
-    <meta name="twitter:image" content="https://www.yaopingan.com/patrick.jpg">
-    <title>Works — Patrick Yao</title>
-    <link rel="canonical" href="https://www.yaopingan.com/works">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta name="twitter:image" content="https://www.yaopingan.com/assets/patrick.jpg">
+    <title>Music — Patrick Yao</title>
+    <link rel="canonical" href="https://www.yaopingan.com/music">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="music.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/font/Typewriter/cmun-typewriter.css">
 </head>
-<body>
+<body class="music-page">
     <div class="waveform-bg" aria-hidden="true"></div>
 
     <header class="site-header">
         <nav class="nav">
             <a href="/" class="nav-brand" aria-label="Home">
-                <img src="PY.svg" alt="Patrick Yao" class="nav-logo">
+                <img src="assets/PY.svg" alt="Patrick Yao" class="nav-logo">
             </a>
             <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
                 <span class="nav-toggle-bar"></span>
@@ -37,7 +38,7 @@
             <div class="nav-links">
                 <a href="/" class="nav-link">HOME</a>
                 <a href="/about" class="nav-link">ABOUT</a>
-                <a href="/works" class="nav-link nav-link--active">WORKS</a>
+                <a href="/music" class="nav-link nav-link--active">MUSIC</a>
                 <a href="/writings" class="nav-link">WRITINGS</a>
                 <a href="/gallery" class="nav-link">GALLERY</a>
                 <a href="/contact" class="nav-link">CONTACT</a>
@@ -45,17 +46,28 @@
         </nav>
     </header>
 
-    <main class="works-page">
-        <h1 class="works-page-title">Works</h1>
-        <p class="works-page-intro">Compositions, videos, and performances.</p>
+    <main class="music-page">
+        <header class="music-header">
+            <h1 class="music-header-title">Music</h1>
+            <p class="music-header-intro">Compositions, videos, and performances.</p>
+        </header>
 
-        <section class="works-section">
+        <div class="music-layout">
+            <nav class="music-nav" aria-label="Page sections">
+                <a href="#projects" class="music-nav-link">Projects</a>
+                <a href="#compositions" class="music-nav-link">Compositions</a>
+                <a href="#performances" class="music-nav-link">Performances</a>
+                <a href="#videos" class="music-nav-link">Videos</a>
+            </nav>
+
+            <div class="music-content">
+        <section id="projects" class="works-section">
             <h2 class="works-section-title">Projects</h2>
             <div class="works-projects-grid">
                 <article class="work-project-card">
                     <span class="work-project-year">2025</span>
                     <a href="https://www.youtube.com/watch?v=UXHoRNtbXOw" target="_blank" rel="noopener" class="work-project-image-link">
-                        <img src="beach.jpg" alt="Beach by Hiroshi Studios (2025)" class="work-project-image">
+                        <img src="assets/beach.jpg" alt="Beach by Hiroshi Studios (2025)" class="work-project-image">
                     </a>
                     <div class="work-project-details">
                         <a href="https://www.youtube.com/watch?v=UXHoRNtbXOw" target="_blank" rel="noopener" class="work-project-title-link">
@@ -67,7 +79,7 @@
                 <article class="work-project-card">
                     <span class="work-project-year">Ongoing</span>
                     <a href="" class="work-project-image-link">
-                        <img src="aegean.jpg" alt="The Aegean Suite (Ongoing)" class="work-project-image">
+                        <img src="assets/aegean.jpg" alt="The Aegean Suite (Ongoing)" class="work-project-image">
                     </a>
                     <div class="work-project-details">
                         <h3 class="work-project-title">The Aegean Suite</h3>
@@ -77,7 +89,7 @@
             </div>
         </section>
 
-        <section class="works-section">
+        <section id="compositions" class="works-section">
             <h2 class="works-section-title">Compositions</h2>
             <div class="works-grid">
                 <article class="work-card">
@@ -143,7 +155,7 @@
             </div>
         </section>
 
-        <section class="works-section">
+        <section id="performances" class="works-section">
             <h2 class="works-section-title">Performances & Events</h2>
             <div class="works-timeline">
                 <article class="work-event">
@@ -342,124 +354,16 @@
             </div>
         </section>
 
-        <section class="works-section">
+        <section id="videos" class="works-section">
             <h2 class="works-section-title">Videos</h2>
             <p class="works-videos-intro">Performances and recordings from my <a href="https://www.youtube.com/@patrickyao/videos" target="_blank" rel="noopener" class="works-videos-link">YouTube Channel</a>.</p>
-            <div class="works-videos-grid">
-                <article class="work-video-item">
-                    <button type="button" class="work-video-thumb" data-video-id="xDaUcHkDbaw" data-video-title="Lament from Epirus x Horse Racing (Somax2) | Patrick Yao" aria-label="Play Lament from Epirus x Horse Racing (Somax2) | Patrick Yao">
-                        <img src="https://i.ytimg.com/vi/xDaUcHkDbaw/mqdefault.jpg" alt="" loading="lazy">
-                    </button>
-                    <h3 class="work-video-title">Lament from Epirus x Horse Racing</h3>
-                    <p class="work-video-year">2025</p>
-                </article>
-                <article class="work-video-item">
-                    <button type="button" class="work-video-thumb" data-video-id="NJcJ-KummEE" data-video-title="Billy Joel - Vienna (Live at Campion School Christmas Concert 2025) | Patrick Yao" aria-label="Play Billy Joel - Vienna (Live at Campion School Christmas Concert 2025) | Patrick Yao">
-                        <img src="https://i.ytimg.com/vi/NJcJ-KummEE/mqdefault.jpg" alt="" loading="lazy">
-                    </button>
-                    <h3 class="work-video-title">Vienna</h3>
-                    <p class="work-video-year">2025</p>
-                </article>
-                <article class="work-video-item">
-                    <button type="button" class="work-video-thumb" data-video-id="R8x_qvNMtfk" data-video-title="Sofferenza d'amore (Original Composition) | Patrick Yao" aria-label="Play Sofferenza d'amore (Original Composition) | Patrick Yao">
-                        <img src="https://i.ytimg.com/vi/R8x_qvNMtfk/mqdefault.jpg" alt="" loading="lazy">
-                    </button>
-                    <h3 class="work-video-title">Sofferenza d'amore</h3>
-                    <p class="work-video-year">2026</p>
-                </article>
-                <article class="work-video-item">
-                    <button type="button" class="work-video-thumb" data-video-id="s2owfob3t9w" data-video-title="Minotaur's Lament - Live vocal improvisation with real-time hand tracking &amp; Somax2 | Patrick Yao" aria-label="Play Minotaur's Lament - Live vocal improvisation with real-time hand tracking and Somax2 | Patrick Yao">
-                        <img src="https://i.ytimg.com/vi/s2owfob3t9w/mqdefault.jpg" alt="" loading="lazy">
-                    </button>
-                    <h3 class="work-video-title">Minotaur's Lament</h3>
-                    <p class="work-video-year">2025</p>
-                </article>
-                <article class="work-video-item">
-                    <button type="button" class="work-video-thumb" data-video-id="tzsD8VVyoM4" data-video-title="Xenakis Reimagined - A.I. Metastaseis (Somax2) | Patrick Yao" aria-label="Play Xenakis Reimagined - A.I. Metastaseis (Somax2) | Patrick Yao">
-                        <img src="https://i.ytimg.com/vi/tzsD8VVyoM4/mqdefault.jpg" alt="" loading="lazy">
-                    </button>
-                    <h3 class="work-video-title">Xenakis Reimagined</h3>
-                    <p class="work-video-year">2025</p>
-                </article>
-                <article class="work-video-item">
-                    <button type="button" class="work-video-thumb" data-video-id="BSusBIhsPnQ" data-video-title="Alberto Ginastera - No. 6 from 12 American Preludes, Op. 12" aria-label="Play Alberto Ginastera - No. 6 from 12 American Preludes, Op. 12">
-                        <img src="https://i.ytimg.com/vi/BSusBIhsPnQ/mqdefault.jpg" alt="" loading="lazy">
-                    </button>
-                    <h3 class="work-video-title">No. 6 from 12 American Preludes</h3>
-                    <p class="work-video-year">2025</p>
-                </article>
-                <article class="work-video-item">
-                    <button type="button" class="work-video-thumb" data-video-id="mYfBhIBxqpo" data-video-title="Patrick Yao - Waltz in G major, Op.3 No.1" aria-label="Play Patrick Yao - Waltz in G major, Op.3 No.1">
-                        <img src="https://i.ytimg.com/vi/mYfBhIBxqpo/mqdefault.jpg" alt="" loading="lazy">
-                    </button>
-                    <h3 class="work-video-title">Waltz in G Major</h3>
-                    <p class="work-video-year">2024</p>
-                </article>
-                <article class="work-video-item">
-                    <button type="button" class="work-video-thumb" data-video-id="MTRgmUm3QLs" data-video-title="Burden of Dreams (Live) | Patrick Yao" aria-label="Play Burden of Dreams (Live) | Patrick Yao">
-                        <img src="https://i.ytimg.com/vi/MTRgmUm3QLs/mqdefault.jpg" alt="" loading="lazy">
-                    </button>
-                    <h3 class="work-video-title">Burden of Dreams</h3>
-                    <p class="work-video-year">2025</p>
-                </article>
-                <article class="work-video-item">
-                    <button type="button" class="work-video-thumb" data-video-id="kktKF4bkrDk" data-video-title="Patrick Yao sings Good Riddance (Time of Your Life) at CSMUN 2025 Closing Ceremony" aria-label="Play Patrick Yao sings Good Riddance (Time of Your Life) at CSMUN 2025 Closing Ceremony">
-                        <img src="https://i.ytimg.com/vi/kktKF4bkrDk/mqdefault.jpg" alt="" loading="lazy">
-                    </button>
-                    <h3 class="work-video-title">Good Riddance</h3>
-                    <p class="work-video-year">2025</p>
-                </article>
-                <article class="work-video-item">
-                    <button type="button" class="work-video-thumb" data-video-id="LFeQTjMG63Y" data-video-title="Sokratis Malamas - To Gramma (Το Γράμμα) | Patrick Yao" aria-label="Play Sokratis Malamas - To Gramma (Το Γράμμα) | Patrick Yao">
-                        <img src="https://i.ytimg.com/vi/LFeQTjMG63Y/mqdefault.jpg" alt="" loading="lazy">
-                    </button>
-                    <h3 class="work-video-title">To Gramma</h3>
-                    <p class="work-video-year">2025</p>
-                </article>
-                <article class="work-video-item">
-                    <button type="button" class="work-video-thumb" data-video-id="zSAuitF_nH4" data-video-title="Creedence Clearwater Revival - Have You Ever Seen The Rain (Cover) | Patrick Yao" aria-label="Play Creedence Clearwater Revival - Have You Ever Seen The Rain (Cover) | Patrick Yao">
-                        <img src="https://i.ytimg.com/vi/zSAuitF_nH4/mqdefault.jpg" alt="" loading="lazy">
-                    </button>
-                    <h3 class="work-video-title">Have You Ever Seen the Rain?</h3>
-                    <p class="work-video-year">2025</p>
-                </article>
-                <article class="work-video-item">
-                    <button type="button" class="work-video-thumb" data-video-id="GYfBZRCpHIo" data-video-title="Bob Dylan &amp; Adele - Make You Feel My Love (Cover) | Patrick Yao" aria-label="Play Bob Dylan and Adele - Make You Feel My Love (Cover) | Patrick Yao">
-                        <img src="https://i.ytimg.com/vi/GYfBZRCpHIo/mqdefault.jpg" alt="" loading="lazy">
-                    </button>
-                    <h3 class="work-video-title">Make You Feel My Love</h3>
-                    <p class="work-video-year">2025</p>
-                </article>
-                <article class="work-video-item">
-                    <button type="button" class="work-video-thumb" data-video-id="VGATHwMfmLA" data-video-title="Yorgos Rous - Eksaireseis (Live at Campion School International Day 2025) | Patrick Yao" aria-label="Play Yorgos Rous - Eksaireseis (Live at Campion School International Day 2025) | Patrick Yao">
-                        <img src="https://i.ytimg.com/vi/VGATHwMfmLA/mqdefault.jpg" alt="" loading="lazy">
-                    </button>
-                    <h3 class="work-video-title">Eksaireseis</h3>
-                    <p class="work-video-year">2025</p>
-                </article>
-                <article class="work-video-item">
-                    <button type="button" class="work-video-thumb" data-video-id="t25mIew8XNE" data-video-title="Chris Isaak - Wicked Game (Live at Campion Spring Concert 2025) | Patrick Yao" aria-label="Play Chris Isaak - Wicked Game (Live at Campion Spring Concert 2025) | Patrick Yao">
-                        <img src="https://i.ytimg.com/vi/t25mIew8XNE/mqdefault.jpg" alt="" loading="lazy">
-                    </button>
-                    <h3 class="work-video-title">Wicked Game</h3>
-                    <p class="work-video-year">2025</p>
-                </article>
-                <article class="work-video-item">
-                    <button type="button" class="work-video-thumb" data-video-id="WziVlK1F_Ck" data-video-title="Morricone - Playing Love from The Legend of 1900 | Patrick Yao" aria-label="Play Morricone - Playing Love from The Legend of 1900 | Patrick Yao">
-                        <img src="https://i.ytimg.com/vi/WziVlK1F_Ck/mqdefault.jpg" alt="" loading="lazy">
-                    </button>
-                    <h3 class="work-video-title">Playing Love</h3>
-                    <p class="work-video-year">2024</p>
-                </article>
-                <article class="work-video-item">
-                    <button type="button" class="work-video-thumb" data-video-id="0dIdHb_7r0E" data-video-title="Chopin - Waltz No.19 in A Minor Op. Posth. by Patrick Yao" aria-label="Play Chopin - Waltz No.19 in A Minor Op. Posth. by Patrick Yao">
-                        <img src="https://i.ytimg.com/vi/0dIdHb_7r0E/mqdefault.jpg" alt="" loading="lazy">
-                    </button>
-                    <h3 class="work-video-title">Waltz in A Minor</h3>
-                    <p class="work-video-year">2023</p>
-                </article>
+            <div id="music-videos-grid" class="works-videos-grid" data-loading="true">
+                <p class="music-videos-loading">Loading videos…</p>
             </div>
         </section>
+
+            </div>
+        </div>
 
         <div class="works-video-lightbox" id="works-video-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Video player">
             <button class="works-video-lightbox-close" type="button" aria-label="Close video">&times;</button>
@@ -475,44 +379,36 @@
     <script src="nav.js"></script>
     <script>
         (function () {
-            var lightbox = document.getElementById('works-video-lightbox');
-            var player = document.getElementById('works-video-lightbox-player');
-            var closeBtn = lightbox && lightbox.querySelector('.works-video-lightbox-close');
-            if (!lightbox || !player || !closeBtn) return;
+            var sectionIds = ['projects', 'compositions', 'performances', 'videos'];
+            var visibility = {};
 
-            function openVideo(videoId, title) {
-                player.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
-                player.title = title || 'YouTube video player';
-                lightbox.setAttribute('aria-hidden', 'false');
-                lightbox.classList.add('works-video-lightbox--open');
-                document.body.style.overflow = 'hidden';
-                closeBtn.focus();
-            }
-
-            function closeVideo() {
-                lightbox.setAttribute('aria-hidden', 'true');
-                lightbox.classList.remove('works-video-lightbox--open');
-                document.body.style.overflow = '';
-                player.src = '';
-            }
-
-            document.querySelectorAll('.work-video-thumb').forEach(function (button) {
-                button.addEventListener('click', function () {
-                    openVideo(this.getAttribute('data-video-id'), this.getAttribute('data-video-title'));
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    visibility[entry.target.id] = entry.intersectionRatio;
                 });
-            });
-
-            closeBtn.addEventListener('click', closeVideo);
-            lightbox.addEventListener('click', function (event) {
-                if (event.target === lightbox) closeVideo();
-            });
-            document.addEventListener('keydown', function (event) {
-                if (event.key === 'Escape' && lightbox.classList.contains('works-video-lightbox--open')) {
-                    closeVideo();
+                var maxId = null;
+                var maxRatio = 0;
+                sectionIds.forEach(function (id) {
+                    if ((visibility[id] || 0) > maxRatio) {
+                        maxRatio = visibility[id];
+                        maxId = id;
+                    }
+                });
+                if (maxId) {
+                    document.querySelectorAll('.music-nav-link').forEach(function (link) {
+                        link.classList.toggle('music-nav-link--active', link.getAttribute('href') === '#' + maxId);
+                    });
                 }
+            }, { rootMargin: '-120px 0px -50% 0px', threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] });
+
+            sectionIds.forEach(function (id) {
+                var el = document.getElementById(id);
+                if (el) observer.observe(el);
             });
         })();
-
+    </script>
+    <script src="music-videos.js"></script>
+    <script>
         document.querySelectorAll('.work-event-info-btn').forEach(function (btn) {
             btn.addEventListener('click', function () {
                 window.alert('lol');
