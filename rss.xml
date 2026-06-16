@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Patrick Yao</title>
+    <link>https://www.yaopingan.com/</link>
+    <description>Writings, research, and notes by Patrick Yao — musician and researcher.</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 07 Mar 2026 12:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.yaopingan.com/rss" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://www.yaopingan.com/assets/patrick.jpg</url>
+      <title>Patrick Yao</title>
+      <link>https://www.yaopingan.com/</link>
+    </image>
+
+    <item>
+      <title>On Language, Music, and Machines</title>
+      <link>https://www.yaopingan.com/writings/on-language</link>
+      <guid isPermaLink="true">https://www.yaopingan.com/writings/on-language</guid>
+      <pubDate>Sat, 07 Mar 2026 12:00:00 +0000</pubDate>
+      <category>Writings</category>
+      <description>A reflection on identity, language, music, and machine intelligence.</description>
+    </item>
+
+    <item>
+      <title>An Interactive System for Gesture-Controlled Vocal Improvisation with Somax2: Cultural Narrative in Minotaur&apos;s Lament</title>
+      <link>https://zenodo.org/records/18792999</link>
+      <guid isPermaLink="true">https://zenodo.org/records/18792999</guid>
+      <pubDate>Thu, 26 Feb 2026 12:00:00 +0000</pubDate>
+      <category>Research</category>
+      <description>Preprint. Design and implementation of a system for gesture-controlled vocal improvisation with Somax2, demonstrated through Minotaur&apos;s Lament.</description>
+      <enclosure url="https://www.yaopingan.com/assets/minotaurs-lament-pre.pdf" length="6955967" type="application/pdf"/>
+    </item>
+  </channel>
+</rss>

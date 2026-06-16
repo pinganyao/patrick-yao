@@ -9,7 +9,8 @@
     {"source": "/writings/on-language", "destination": "/writings/on-language.html"},
     {"source": "/writings/on-mun", "destination": "/writings/on-mun.html"},
     {"source": "/photos", "destination": "/photos.html"},
-    {"source": "/contact", "destination": "/contact.html"}
+    {"source": "/contact", "destination": "/contact.html"},
+    {"source": "/rss", "destination": "/rss.xml"}
   ],
   "redirects": [
     {"source": "/about.html", "destination": "/about", "permanent": true},
@@ -22,6 +23,7 @@
     {"source": "/gallery.html", "destination": "/photos", "permanent": true},
     {"source": "/photos.html", "destination": "/photos", "permanent": true},
     {"source": "/contact.html", "destination": "/contact", "permanent": true},
+    {"source": "/rss.xml", "destination": "/rss", "permanent": true},
     {"source": "/index.html", "destination": "/", "permanent": true},
     {"source": "/patrick.jpg", "destination": "/assets/patrick.jpg", "permanent": true},
     {"source": "/patrick-yao.pdf", "destination": "/assets/patrick-yao.pdf", "permanent": true},
