@@ -8,7 +8,7 @@
     {"source": "/writings", "destination": "/writings.html"},
     {"source": "/writings/on-language", "destination": "/writings/on-language.html"},
     {"source": "/writings/on-mun", "destination": "/writings/on-mun.html"},
-    {"source": "/gallery", "destination": "/gallery.html"},
+    {"source": "/photos", "destination": "/photos.html"},
     {"source": "/contact", "destination": "/contact.html"}
   ],
   "redirects": [
@@ -18,7 +18,9 @@
     {"source": "/works.html", "destination": "/music", "permanent": true},
     {"source": "/writings.html", "destination": "/writings", "permanent": true},
     {"source": "/writings/on-model-united-nations", "destination": "/writings/on-mun", "permanent": true},
-    {"source": "/gallery.html", "destination": "/gallery", "permanent": true},
+    {"source": "/gallery", "destination": "/photos", "permanent": true},
+    {"source": "/gallery.html", "destination": "/photos", "permanent": true},
+    {"source": "/photos.html", "destination": "/photos", "permanent": true},
     {"source": "/contact.html", "destination": "/contact", "permanent": true},
     {"source": "/index.html", "destination": "/", "permanent": true},
     {"source": "/patrick.jpg", "destination": "/assets/patrick.jpg", "permanent": true},

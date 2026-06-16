@@ -49,6 +49,7 @@
     }
     </script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/font/Typewriter/cmun-typewriter.css">
 </head>
 <body>
@@ -69,13 +70,13 @@
                 <a href="/about" class="nav-link">ABOUT</a>
                 <a href="/music" class="nav-link">MUSIC</a>
                 <a href="/writings" class="nav-link">WRITINGS</a>
-                <a href="/gallery" class="nav-link">GALLERY</a>
+                <a href="/photos" class="nav-link">PHOTOS</a>
                 <a href="/contact" class="nav-link">CONTACT</a>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main class="home-page">
         <section class="hero">
             <img src="assets/patrick.jpg" alt="Patrick Yao" class="hero-portrait">
             <h1 class="hero-title">PATRICK YAO</h1>
@@ -103,13 +104,81 @@
                 <a href="assets/patrick-yao.pdf" target="_blank" rel="noopener" class="contact-link">Download CV ↗</a>
             </div>
         </section>
+
+        <section class="home-section" aria-labelledby="research-heading">
+            <h2 id="research-heading" class="home-section-title">Research</h2>
+            <ol class="research-list">
+                <li class="research-item">
+                    <article>
+                        <div class="research-meta">
+                            <time datetime="2026">2026</time>
+                            <span class="research-tag">Preprint</span>
+                        </div>
+                        <h3 class="research-title">An Interactive System for Gesture-Controlled Vocal Improvisation with Somax2: Cultural Narrative in Minotaur&rsquo;s Lament</h3>
+                        <p class="research-links">
+                            <a href="assets/minotaurs-lament-pre.pdf" target="_blank" rel="noopener">PDF ↗</a>
+                            <a href="https://zenodo.org/records/18792999" target="_blank" rel="noopener">Zenodo ↗</a>
+                        </p>
+                    </article>
+                </li>
+            </ol>
+        </section>
+
+        <section class="home-section" aria-labelledby="projects-heading">
+            <h2 id="projects-heading" class="home-section-title">Projects</h2>
+            <div class="project-grid">
+                <button type="button" class="project-card" data-title="Athens Music Technology Forum" data-url="https://www.amtf.gr" data-logo="assets/logos/amtf-logo.png" data-desc="Founded in 2025, AMTF is an organisation dedicated to education and research at the intersection of music and computer science — from computational musicology and sound synthesis to AI and music production. It hosted its inaugural conference at the Athens Concert Hall in November 2025.">
+                    <img src="assets/logos/amtf-logo.png" alt="" class="project-card-logo project-logo-invert-light" aria-hidden="true">
+                    <span class="project-card-text">
+                        <span class="project-card-name">AMTF</span>
+                        <span class="project-card-url">amtf.gr</span>
+                    </span>
+                </button>
+                <button type="button" class="project-card" data-title="Musical Metrics" data-url="https://musicalmetrics.xyz" data-logo="assets/logos/metrics-logo.svg" data-desc="A collection of twelve browser-based ear-training games spanning melody, harmony, intervals, tempo, pitch, and rhythm. Sign in to save scores, compete on global leaderboards, and practice listening skills at every level.">
+                    <img src="assets/logos/metrics-logo.svg" alt="" class="project-card-logo project-logo-adaptive" aria-hidden="true">
+                    <span class="project-card-text">
+                        <span class="project-card-name">Musical Metrics</span>
+                        <span class="project-card-url">musicalmetrics.xyz</span>
+                    </span>
+                </button>
+                <button type="button" class="project-card" data-title="Audio Lab" data-url="https://lab.amtf.gr" data-logo="assets/logos/lab-logo.svg" data-desc="A minimal online hub with fifteen music and audio tools built for musicians and researchers — including converters, a live looper, instrument tuner, music visualizer, MIDI piano roll, and browser-based synthesizers. A side project of the Athens Music Technology Forum.">
+                    <img src="assets/logos/lab-logo.svg" alt="" class="project-card-logo" aria-hidden="true">
+                    <span class="project-card-text">
+                        <span class="project-card-name">Audio Lab</span>
+                        <span class="project-card-url">lab.amtf.gr</span>
+                    </span>
+                </button>
+                <button type="button" class="project-card" data-title="Choros" data-url="https://choros.amtf.gr" data-logo="assets/logos/choros-logo.png" data-desc="An interactive map of Greek traditional music and dances. Explore every region of Greece and discover its musical heritage through an immersive, research-driven web experience.">
+                    <img src="assets/logos/choros-logo.png" alt="" class="project-card-logo project-logo-adaptive" aria-hidden="true">
+                    <span class="project-card-text">
+                        <span class="project-card-name">Choros</span>
+                        <span class="project-card-url">choros.amtf.gr</span>
+                    </span>
+                </button>
+            </div>
+        </section>
     </main>
+
+    <div class="project-modal-overlay" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+        <div class="project-modal">
+            <button type="button" class="project-modal-close" aria-label="Close">&times;</button>
+            <img src="" alt="" class="project-modal-logo">
+            <h3 id="project-modal-title" class="project-modal-title"></h3>
+            <p class="project-modal-desc"></p>
+            <p class="project-modal-open">
+                <span class="project-modal-open-comment" aria-hidden="true">//</span>
+                <span class="project-modal-open-cmd">open</span>
+                <a href="#" class="project-modal-visit" target="_blank" rel="noopener"></a>
+            </p>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <p>&copy; 2026 Patrick Yao</p>
     </footer>
 
     <script src="nav.js"></script>
+    <script src="home.js"></script>
     <script defer src="/_vercel/insights/script.js"></script>
     <script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
     <script defer src="/_vercel/speed-insights/script.js"></script>

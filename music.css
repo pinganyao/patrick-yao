@@ -76,8 +76,8 @@ body.music-page main {
 
 body.music-page .works-section-title {
     margin: 0 0 2rem;
-    font-size: 0.68rem;
-    letter-spacing: 0.22em;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
     color: var(--text-muted);
 }
 
