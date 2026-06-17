@@ -2,7 +2,8 @@
   "name": "patrick-yao-website",
   "private": true,
   "scripts": {
-    "thumbs": "node scripts/generate-gallery-thumbs.js"
+    "thumbs": "node scripts/generate-gallery-thumbs.js",
+    "cache-youtube": "node scripts/cache-youtube-videos.js"
   },
   "devDependencies": {
     "sharp": "^0.33.5"

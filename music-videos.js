@@ -5,6 +5,8 @@
   if (!grid || !lightbox || !player) return;
 
   var closeBtn = lightbox.querySelector('.works-video-lightbox-close');
+  var MAX_ATTEMPTS = 3;
+  var RETRY_DELAYS_MS = [0, 800, 2000];
 
   function openVideo(videoId, title) {
     player.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
@@ -54,6 +56,47 @@
     return escapeHtml(text).replace(/'/g, '&#39;');
   }
 
+  function wait(ms) {
+    return new Promise(function (resolve) {
+      setTimeout(resolve, ms);
+    });
+  }
+
+  function fetchJson(url) {
+    return fetch(url).then(function (response) {
+      if (!response.ok) throw new Error('fetch failed');
+      return response.json();
+    });
+  }
+
+  function loadVideosFromApi(attempt) {
+    return wait(RETRY_DELAYS_MS[attempt] || 0).then(function () {
+      return fetchJson('/api/youtube-videos');
+    }).then(function (data) {
+      if (!data.videos || !data.videos.length) throw new Error('no videos');
+      return data.videos;
+    }).catch(function (error) {
+      if (attempt + 1 < MAX_ATTEMPTS) {
+        return loadVideosFromApi(attempt + 1);
+      }
+      throw error;
+    });
+  }
+
+  function loadVideos() {
+    return loadVideosFromApi(0).catch(function () {
+      return fetchJson('/data/youtube-videos.json').then(function (data) {
+        if (!data.videos || !data.videos.length) throw new Error('no cached videos');
+        return data.videos;
+      });
+    });
+  }
+
+  function showError() {
+    grid.innerHTML = '<p class="music-videos-error">Could not load videos. <a href="https://www.youtube.com/@patrickyao/videos" target="_blank" rel="noopener">View on YouTube</a>.</p>';
+    grid.removeAttribute('data-loading');
+  }
+
   grid.addEventListener('click', function (event) {
     var button = event.target.closest('.work-video-thumb');
     if (!button) return;
@@ -70,17 +113,7 @@
     }
   });
 
-  fetch('/api/youtube-videos')
-    .then(function (response) {
-      if (!response.ok) throw new Error('fetch failed');
-      return response.json();
-    })
-    .then(function (data) {
-      if (!data.videos || !data.videos.length) throw new Error('no videos');
-      renderVideos(data.videos);
-    })
-    .catch(function () {
-      grid.innerHTML = '<p class="music-videos-error">Could not load videos. <a href="https://www.youtube.com/@patrickyao/videos" target="_blank" rel="noopener">View on YouTube</a>.</p>';
-      grid.removeAttribute('data-loading');
-    });
+  loadVideos()
+    .then(renderVideos)
+    .catch(showError);
 })();
