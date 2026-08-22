@@ -6,6 +6,7 @@
     --bg: #0a0a0a;
     --bg-subtle: #111;
     --text: #ffffff;
+    --writing-text-dark: #e8e6e1;
     --text-muted: #a0a0a0;
     --accent: #888;
     --border: #222;
@@ -36,6 +37,7 @@
     --bg: #0a0a0a;
     --bg-subtle: #111;
     --text: #ffffff;
+    --writing-text-dark: #e8e6e1;
     --text-muted: #a0a0a0;
     --accent: #888;
     --border: #222;
@@ -920,7 +922,7 @@ main {
 
 .writing-article-content p {
     margin: 0 0 1.4rem;
-    color: var(--text);
+    color: var(--writing-text-dark);
 }
 
 .writing-article-content h2 {
