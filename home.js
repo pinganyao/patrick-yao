@@ -8,10 +8,11 @@
     var descEl = overlay.querySelector('.project-modal-desc');
     var visitEl = overlay.querySelector('.project-modal-visit');
     var cards = document.querySelectorAll('.project-card');
+    var lastFocusedCard = null;
 
     function openModal(card) {
         var title = card.getAttribute('data-title');
-        var url = card.getAttribute('data-url');
+        var url = card.getAttribute('href');
         var logo = card.getAttribute('data-logo');
         var desc = card.getAttribute('data-desc');
         if (!title || !url) return;
@@ -21,7 +22,7 @@
         logoEl.classList.toggle('project-logo-adaptive', !!card.querySelector('.project-logo-adaptive'));
         logoEl.classList.toggle('project-logo-invert-light', !!card.querySelector('.project-logo-invert-light'));
         titleEl.textContent = title;
-        var domain = url.replace(/^https?:\/\/(www\.)?/, '');
+        var domain = url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
         descEl.textContent = desc || '';
         visitEl.href = url;
         visitEl.textContent = domain + ' ↗';
@@ -29,6 +30,7 @@
         overlay.setAttribute('aria-hidden', 'false');
         overlay.classList.add('project-modal-overlay--open');
         document.body.style.overflow = 'hidden';
+        lastFocusedCard = card;
         if (closeBtn) closeBtn.focus();
     }
 
@@ -36,11 +38,26 @@
         overlay.setAttribute('aria-hidden', 'true');
         overlay.classList.remove('project-modal-overlay--open');
         document.body.style.overflow = '';
+        if (lastFocusedCard) {
+            lastFocusedCard.focus();
+            lastFocusedCard = null;
+        }
     }
 
     cards.forEach(function(card) {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function(e) {
+            if (e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) {
+                return;
+            }
+            e.preventDefault();
             openModal(card);
+        });
+
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                openModal(card);
+            }
         });
     });
 
