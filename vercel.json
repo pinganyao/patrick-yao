@@ -1,11 +1,12 @@
 {
   "installCommand": "npm install",
-  "buildCommand": "npm run thumbs && npm run cache-youtube",
+  "buildCommand": "npm run render:paper && npm run thumbs && npm run cache-youtube",
   "outputDirectory": ".",
   "rewrites": [
     {"source": "/about", "destination": "/about.html"},
     {"source": "/music", "destination": "/music.html"},
     {"source": "/writings", "destination": "/writings.html"},
+    {"source": "/writings/minotaurs-lament", "destination": "/writings/minotaurs-lament.html"},
     {"source": "/writings/on-language", "destination": "/writings/on-language.html"},
     {"source": "/writings/on-mun", "destination": "/writings/on-mun.html"},
     {"source": "/photos", "destination": "/photos.html"},
@@ -13,6 +14,7 @@
     {"source": "/rss", "destination": "/rss.xml"}
   ],
   "redirects": [
+    {"source": "/writings/minotaurs-lament.html", "destination": "/writings/minotaurs-lament", "permanent": true},
     {"source": "/about.html", "destination": "/about", "permanent": true},
     {"source": "/music.html", "destination": "/music", "permanent": true},
     {"source": "/works", "destination": "/music", "permanent": true},
