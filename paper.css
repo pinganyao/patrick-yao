@@ -18,6 +18,7 @@
 .paper-toc li { margin: 0 0 .8rem; }
 .paper-toc a { color: var(--text-muted); text-decoration: none; }
 .paper-toc a:hover { color: var(--text); text-decoration: underline; }
+.paper-toc a[aria-current="location"] { color: var(--text); font-weight: bold; }
 .paper-content { min-width: 0; font-family: var(--font-writing); font-size: 1.05rem; line-height: 1.8; color: var(--writing-text); }
 .paper-content p { margin: 0 0 1.3rem; }
 .paper-content h2, .paper-content h3 { color: var(--text); line-height: 1.35; font-weight: 600; text-wrap: balance; }
