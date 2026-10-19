@@ -11,6 +11,7 @@
     --accent: #888;
     --border: #222;
     --font-main: 'Computer Modern Typewriter', 'CMU Typewriter', monospace;
+    --font-writing: Georgia, 'Times New Roman', serif;
 }
 
 @media (prefers-color-scheme: light) {
@@ -886,6 +887,23 @@ main {
     outline-offset: 6px;
 }
 
+/* Shared navigation for all writing articles */
+.writing-back {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}
+
+.writing-back:hover { color: var(--text); }
+.writing-back:focus-visible { outline: 2px solid var(--text); outline-offset: 4px; }
+
+@media print {
+    .writing-back { display: none; }
+}
+
 /* Writing article template */
 .writing-article-page {
     max-width: 900px;
@@ -899,12 +917,15 @@ main {
 
 .writing-article-title {
     margin: 0;
+    font-family: var(--font-writing);
+    font-weight: 500;
     font-size: clamp(2rem, 5vw, 3.2rem);
     line-height: 1.15;
-    letter-spacing: 0.02em;
+    letter-spacing: -0.025em;
 }
 
 .writing-article-subtitle {
+    font-family: var(--font-writing);
     margin: 0.5rem 0 0;
     font-size: 1.1rem;
     color: var(--text-muted);
@@ -918,6 +939,7 @@ main {
 }
 
 .writing-article-content {
+    font-family: var(--font-writing);
     font-size: 1rem;
     line-height: 1.8;
 }
