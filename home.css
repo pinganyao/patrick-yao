@@ -57,7 +57,7 @@
     height: 100%;
     object-fit: contain;
     object-position: bottom;
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(0.96);
 }
 
 :root[data-theme='light'] .hero-performer {
