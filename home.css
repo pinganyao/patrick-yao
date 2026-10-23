@@ -1,5 +1,13 @@
 /* Homepage — research & projects (index.html only) */
 
+.hero-title {
+    margin-bottom: 1.5rem;
+}
+
+.hero-social {
+    margin-bottom: 1.5rem;
+}
+
 .home-section {
     padding: 3rem 0 0;
     border-top: 1px solid var(--border);
