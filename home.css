@@ -1,11 +1,78 @@
-/* Homepage — research & projects (index.html only) */
+/* Homepage — a monochrome performance poster. */
+.home-page {
+    max-width: 1160px;
+    padding-top: 1rem;
+}
 
-.hero-title {
+.home-page .hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    min-height: 660px;
+    padding: 2rem 0 0;
+    text-align: left;
+    isolation: isolate;
+}
+
+.hero-copy {
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    z-index: 1;
+    padding: 1rem 0 4rem;
+}
+
+.home-page .hero-title {
     margin-bottom: 1.25rem;
 }
 
-.hero-social {
+.home-page .hero-social {
+    justify-content: flex-start;
     margin-bottom: 1.5rem;
+}
+
+.home-page .hero-tagline {
+    margin-inline: 0;
+}
+
+.home-page .contact-links {
+    justify-content: flex-start;
+}
+
+.hero-art {
+    grid-column: 2;
+    grid-row: 1;
+    position: relative;
+    align-self: end;
+    height: 620px;
+    min-width: 0;
+    pointer-events: none;
+}
+
+.hero-performer {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+    filter: brightness(0) invert(1);
+}
+
+:root[data-theme='light'] .hero-performer {
+    filter: brightness(0);
+}
+
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme='dark']) .hero-performer {
+        filter: brightness(0);
+    }
+}
+
+.home-page a:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 5px;
 }
 
 .home-section {
@@ -275,7 +342,97 @@
     outline-offset: 4px;
 }
 
+/* Desktop cover: the artwork is cropped by the hero, never by the asset. */
+@media (min-width: 1000px) {
+    .home-page {
+        max-width: none;
+        padding: 0 0 4rem;
+    }
+
+    .home-page .hero {
+        grid-template-columns: 55% 45%;
+        min-height: calc(100svh - var(--home-header-height, 82px));
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .hero-copy {
+        grid-column: 2;
+        width: 100%;
+        max-width: 640px;
+        padding: 3rem clamp(2rem, 4vw, 5rem) 3rem 1rem;
+        text-align: right;
+    }
+
+    .home-page .hero-social,
+    .home-page .contact-links {
+        justify-content: flex-end;
+        padding-right: 0.5rem;
+    }
+
+    .home-page .hero-tagline {
+        margin-inline: auto;
+    }
+
+    .hero-art {
+        position: absolute;
+        inset: 0;
+        grid-column: auto;
+        grid-row: auto;
+        height: 100%;
+    }
+
+    .hero-performer {
+        position: absolute;
+        top: clamp(48px, 10vh, 120px);
+        left: -17vw;
+        width: 78vw;
+        height: auto;
+    }
+
+    .home-section {
+        position: relative;
+        border-top: 0;
+        max-width: calc(1160px - 4rem);
+        margin-inline: auto;
+        width: calc(100% - 4rem);
+    }
+
+    .home-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 100vw;
+        transform: translateX(-50%);
+        border-top: 1px solid var(--border);
+        pointer-events: none;
+    }
+}
+
 @media (max-width: 640px) {
+    .home-page {
+        padding: 1rem 1.25rem 3rem;
+    }
+
+    .home-page .hero {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        padding-top: 2rem;
+    }
+
+    .hero-copy {
+        padding: 0;
+    }
+
+    .hero-art {
+        grid-column: 1;
+        grid-row: 2;
+        height: 460px;
+        width: 100%;
+        margin-top: 2rem;
+    }
+
     .home-section {
         padding-top: 2.5rem;
     }

@@ -1,4 +1,18 @@
 (function() {
+    // Keep the desktop cover aligned with the viewport when the nav reflows.
+    var header = document.querySelector('.site-header');
+    if (header) {
+        var updateHeaderHeight = function() {
+            document.documentElement.style.setProperty('--home-header-height', header.getBoundingClientRect().height + 'px');
+        };
+        updateHeaderHeight();
+        if ('ResizeObserver' in window) {
+            new ResizeObserver(updateHeaderHeight).observe(header);
+        } else {
+            window.addEventListener('resize', updateHeaderHeight);
+        }
+    }
+
     var overlay = document.getElementById('project-modal');
     if (!overlay) return;
 
