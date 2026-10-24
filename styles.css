@@ -170,7 +170,7 @@ body {
     grid-column: 2;
     justify-self: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 40px 48px;
     justify-content: center;
     align-items: center;
@@ -181,11 +181,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
     min-width: 44px;
     min-height: 44px;
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
     padding: 0;
     background: none;
     border: none;
@@ -200,15 +200,16 @@ body {
 
 .nav-toggle-bar {
     display: block;
-    width: 100%;
+    width: 28px;
     height: 2px;
+    border-radius: 1px;
     background: currentColor;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-links {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 40px 48px;
     justify-content: center;
     align-items: center;
@@ -1561,25 +1562,8 @@ main {
 }
 
 
-/* Responsive */
-@media (max-width: 640px) {
-    .page-with-sidebar {
-        grid-template-columns: 1fr;
-        padding: 0 1.25rem;
-    }
-
-    .side-nav {
-        display: none;
-    }
-
-    .page-with-sidebar > main {
-        grid-column: 1;
-    }
-
-    main {
-        padding: 2rem 1.25rem 3rem;
-    }
-
+/* Collapse navigation before the desktop row runs out of room. */
+@media (max-width: 1100px) {
     .site-header {
         grid-template-columns: 1fr;
         padding: 20px;
@@ -1607,6 +1591,7 @@ main {
     .nav-links {
         display: none;
         flex-basis: 100%;
+        order: 3;
         flex-direction: column;
         gap: 16px;
         padding-top: 16px;
@@ -1618,7 +1603,7 @@ main {
     }
 
     .nav.nav--open .nav-toggle-bar:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
     }
 
     .nav.nav--open .nav-toggle-bar:nth-child(2) {
@@ -1626,7 +1611,7 @@ main {
     }
 
     .nav.nav--open .nav-toggle-bar:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
     }
 
     .nav-link {
@@ -1639,6 +1624,26 @@ main {
 
     .nav-num {
         display: none;
+    }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .page-with-sidebar {
+        grid-template-columns: 1fr;
+        padding: 0 1.25rem;
+    }
+
+    .side-nav {
+        display: none;
+    }
+
+    .page-with-sidebar > main {
+        grid-column: 1;
+    }
+
+    main {
+        padding: 2rem 1.25rem 3rem;
     }
 
     .hero-title {

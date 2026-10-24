@@ -1,4 +1,12 @@
 /* Homepage — a monochrome performance poster. */
+:root .site-header.site-header--home {
+    position: relative;
+    background: var(--bg);
+    border-bottom: 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
 .home-page {
     max-width: 1160px;
     padding-top: 1rem;
@@ -393,9 +401,9 @@
     .home-section {
         position: relative;
         border-top: 0;
-        max-width: calc(1160px - 4rem);
+        max-width: 920px;
         margin-inline: auto;
-        width: calc(100% - 4rem);
+        width: calc(100% - 3rem);
     }
 
     .home-section::before {
