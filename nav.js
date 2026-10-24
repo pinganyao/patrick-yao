@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const root = document.documentElement;
     const nav = document.querySelector('.nav');
     const toggle = document.querySelector('.nav-toggle');
-    if (!nav || !toggle) return;
-    const navLinks = nav.querySelector('.nav-links');
+    const navLinks = document.querySelector('[data-theme-control]') || (nav && nav.querySelector('.nav-links'));
     const themeMedia = window.matchMedia('(prefers-color-scheme: dark)');
 
     function currentSystemTheme() {
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateThemeButton(themeButton) {
         const activeTheme = root.getAttribute('data-theme') || currentSystemTheme();
-    themeButton.textContent = activeTheme === 'dark' ? '☾' : '☀︎';
+        themeButton.textContent = activeTheme === 'dark' ? '☾' : '☀︎';
         themeButton.setAttribute('aria-label', 'Switch to ' + (activeTheme === 'dark' ? 'light' : 'dark') + ' mode');
         themeButton.setAttribute('title', 'Switch to ' + (activeTheme === 'dark' ? 'light' : 'dark') + ' mode');
     }
@@ -26,16 +25,17 @@ document.addEventListener('DOMContentLoaded', function () {
     applyTheme(savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : currentSystemTheme());
 
     function closeMenu() {
+        if (!nav || !toggle) return;
         nav.classList.remove('nav--open');
         toggle.setAttribute('aria-expanded', 'false');
     }
 
-    toggle.addEventListener('click', function () {
+    if (nav && toggle) toggle.addEventListener('click', function () {
         const isOpen = nav.classList.toggle('nav--open');
         toggle.setAttribute('aria-expanded', isOpen);
     });
 
-    nav.querySelectorAll('.nav-link').forEach(function (link) {
+    document.querySelectorAll('.nav-link').forEach(function (link) {
         link.addEventListener('click', closeMenu);
     });
 
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     document.addEventListener('click', function (e) {
-        if (nav.classList.contains('nav--open') && !nav.contains(e.target)) {
+        if (nav && nav.classList.contains('nav--open') && !nav.contains(e.target)) {
             closeMenu();
         }
     });
