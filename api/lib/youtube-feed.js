@@ -134,22 +134,20 @@ function readCache() {
 }
 
 async function fetchVideosLive(apiKey) {
-  const errors = [];
-
   if (apiKey) {
     try {
       const videos = await fetchWithRetry(() => fetchFromApi(apiKey), 2, 300);
       return { videos, source: 'api' };
-    } catch (error) {
-      errors.push(error);
+    } catch {
+      // Fall through to the public RSS feed.
     }
   }
 
   try {
     const videos = await fetchWithRetry(() => fetchFromRss(), 5, 500);
     return { videos, source: 'rss' };
-  } catch (error) {
-    errors.push(error);
+  } catch {
+    // Fall through to the checked-in cache.
   }
 
   const videos = readCache();
