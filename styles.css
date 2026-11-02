@@ -332,6 +332,10 @@ main {
     margin: 0 0 1.5rem;
 }
 
+.about-bio a {
+    color: inherit;
+}
+
 .about-bio p:last-child {
     margin-bottom: 0;
 }
