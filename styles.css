@@ -322,7 +322,6 @@ main {
 
 .about-bio {
     padding: 0.25rem 0 3rem;
-    border-bottom: 1px solid var(--border);
 }
 
 .about-bio p {
