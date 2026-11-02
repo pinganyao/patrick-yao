@@ -103,6 +103,8 @@ body {
 
 /* Header */
 .site-header {
+    /* Scale the entire header uniformly, including its layout height. */
+    zoom: 0.9;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -337,6 +339,35 @@ main {
 
 .about-bio p:last-child {
     margin-bottom: 0;
+}
+
+.about-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.about-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 44px;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    background-color: var(--bg-subtle);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.about-action:hover {
+    border-color: var(--text-muted);
+}
+
+.about-action:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 4px;
 }
 
 /* Music sections */

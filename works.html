@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- Apply the saved theme before styles or page content can render. -->
+    <script>
+        (function () {
+            var theme;
+            try { theme = localStorage.getItem('theme-preference'); } catch (error) {}
+            if (theme !== 'light' && theme !== 'dark') {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.style.colorScheme = theme;
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Works by Patrick Yao — projects in music, technology, and education.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Patrick Yao">
+    <meta property="og:title" content="Works — Patrick Yao">
+    <meta property="og:description" content="Projects in music, technology, and education by Patrick Yao.">
+    <meta property="og:image" content="https://www.yaopingan.com/assets/patrick.jpg">
+    <meta property="og:url" content="https://www.yaopingan.com/works">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Works — Patrick Yao">
+    <meta name="twitter:description" content="Projects in music, technology, and education by Patrick Yao.">
+    <meta name="twitter:image" content="https://www.yaopingan.com/assets/patrick.jpg">
+    <title>Works — Patrick Yao</title>
+    <link rel="canonical" href="https://www.yaopingan.com/works">
+    <link rel="alternate" type="application/rss+xml" title="Patrick Yao" href="https://www.yaopingan.com/rss">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="works.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/font/Typewriter/cmun-typewriter.css">
+</head>
+<body class="works-layout">
+    <div class="waveform-bg" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="nav">
+            <a href="/" class="nav-brand" aria-label="Home">
+                <img src="assets/PY.svg" alt="Patrick Yao" class="nav-logo">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <div class="nav-links">
+                <a href="/" class="nav-link">HOME</a>
+                <a href="/about" class="nav-link">ABOUT</a>
+                <a href="/works" class="nav-link nav-link--active" aria-current="page">WORKS</a>
+                <a href="/music" class="nav-link">MUSIC</a>
+                <a href="/writings" class="nav-link">WRITINGS</a>
+                <a href="/photos" class="nav-link">PHOTOS</a>
+                <a href="/contact" class="nav-link">CONTACT</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="works-page">
+        <header class="works-intro">
+            <h1 class="works-title">Works</h1>
+        </header>
+        <section class="works-projects" aria-label="Works">
+            <div class="project-grid">
+                <a href="https://www.amtf.gr/" target="_blank" rel="noopener" class="project-card" data-title="Athens Music Technology Forum" data-logo="assets/logos/amtf-logo.png" data-desc="Founded in 2025, AMTF is an organisation dedicated to education and research at the intersection of music and computer science — from computational musicology and sound synthesis to AI and music production. It hosted its inaugural conference at the Athens Concert Hall in November 2025.">
+                    <img src="assets/logos/amtf-logo.png" alt="" class="project-card-logo project-logo-invert-light" aria-hidden="true">
+                    <span class="project-card-text">
+                        <span class="project-card-name">AMTF</span>
+                        <span class="project-card-url">amtf.gr</span>
+                    </span>
+                </a>
+                <a href="https://musicalmetrics.xyz/" target="_blank" rel="noopener" class="project-card" data-title="Musical Metrics" data-logo="assets/logos/metrics-logo.svg" data-desc="A collection of twelve browser-based ear-training games spanning melody, harmony, intervals, tempo, pitch, and rhythm. Part of an ongoing research in exploring hearing ability as a component of musical learning.">
+                    <img src="assets/logos/metrics-logo.svg" alt="" class="project-card-logo project-logo-adaptive" aria-hidden="true">
+                    <span class="project-card-text">
+                        <span class="project-card-name">Musical Metrics</span>
+                        <span class="project-card-url">musicalmetrics.xyz</span>
+                    </span>
+                </a>
+                <a href="https://lab.amtf.gr/" target="_blank" rel="noopener" class="project-card" data-title="Audio Lab" data-logo="assets/logos/lab-logo.svg" data-desc="An online hub with 15 music and audio tools built for musicians and researchers — including audio converters, a live looper, music visualiser, MIDI piano roll, and a virtual synthesizer.">
+                    <img src="assets/logos/lab-logo.svg" alt="" class="project-card-logo" aria-hidden="true">
+                    <span class="project-card-text">
+                        <span class="project-card-name">Audio Lab</span>
+                        <span class="project-card-url">lab.amtf.gr</span>
+                    </span>
+                </a>
+                <a href="https://choros.amtf.gr/" target="_blank" rel="noopener" class="project-card" data-title="Choros" data-logo="assets/logos/choros-logo.png" data-desc="An interactive map of Greek traditional music and dances. Explore every region of Greece and discover its musical heritage through an immersive, research-driven web experience.">
+                    <img src="assets/logos/choros-logo.png" alt="" class="project-card-logo project-logo-adaptive" aria-hidden="true">
+                    <span class="project-card-text">
+                        <span class="project-card-name">Choros</span>
+                        <span class="project-card-url">choros.amtf.gr</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div class="project-modal-overlay" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+        <div class="project-modal">
+            <button type="button" class="project-modal-close" aria-label="Close">&times;</button>
+            <img src="" alt="" class="project-modal-logo">
+            <h3 id="project-modal-title" class="project-modal-title"></h3>
+            <p class="project-modal-desc"></p>
+            <p class="project-modal-open">
+                <span class="project-modal-open-comment" aria-hidden="true">//</span>
+                <span class="project-modal-open-cmd">open</span>
+                <a href="#" class="project-modal-visit" target="_blank" rel="noopener"></a>
+            </p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Patrick Yao</p>
+    </footer>
+    <script src="nav.js"></script>
+    <script src="works.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>

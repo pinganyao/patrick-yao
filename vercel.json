@@ -3,6 +3,7 @@
   "buildCommand": "npm run render:paper && npm run thumbs && npm run cache-youtube",
   "outputDirectory": ".",
   "rewrites": [
+    {"source": "/works", "destination": "/works.html"},
     {"source": "/about", "destination": "/about.html"},
     {"source": "/music", "destination": "/music.html"},
     {"source": "/writings", "destination": "/writings.html"},
@@ -17,8 +18,7 @@
     {"source": "/writings/minotaurs-lament.html", "destination": "/writings/minotaurs-lament", "permanent": true},
     {"source": "/about.html", "destination": "/about", "permanent": true},
     {"source": "/music.html", "destination": "/music", "permanent": true},
-    {"source": "/works", "destination": "/music", "permanent": true},
-    {"source": "/works.html", "destination": "/music", "permanent": true},
+    {"source": "/works.html", "destination": "/works", "permanent": true},
     {"source": "/writings.html", "destination": "/writings", "permanent": true},
     {"source": "/writings/on-model-united-nations", "destination": "/writings/on-mun", "permanent": true},
     {"source": "/gallery", "destination": "/photos", "permanent": true},
