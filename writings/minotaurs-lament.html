@@ -3,6 +3,18 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <!-- Apply the saved theme before styles or page content can render. -->
+    <script>
+        (function () {
+            var theme;
+            try { theme = localStorage.getItem('theme-preference'); } catch (error) {}
+            if (theme !== 'light' && theme !== 'dark') {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.style.colorScheme = theme;
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A preprint by Pingan Yao on gesture-controlled vocal improvisation with Somax2, demonstrated through Minotaur’s Lament.">
     <meta name="date" content="2026-02-26">
