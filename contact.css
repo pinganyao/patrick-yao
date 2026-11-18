@@ -1,7 +1,15 @@
 /* Contact page — minimal editorial layout (contact.html only) */
 
+.contact-layout {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+}
+
 .contact-page {
+    width: 100%;
     max-width: 680px;
+    flex: 1;
     padding: 3rem 2rem 4rem;
 }
 
