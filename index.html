@@ -70,13 +70,10 @@
 
     <main class="home-page">
         <section class="hero" aria-labelledby="hero-heading">
-            <div class="hero-art">
-                <img src="assets/patrick-performing.svg" width="1024" height="1536" fetchpriority="high" alt="Silhouette of Patrick singing into a microphone and playing acoustic guitar, based on his live performance photograph." class="hero-performer">
-            </div>
             <div class="hero-copy">
             <h1 id="hero-heading" class="home-visually-hidden">Patrick Yao</h1>
             <a href="/" class="hero-brand" aria-label="Patrick Yao — home" aria-current="page">
-                <img src="assets/PY.svg" alt="" class="nav-logo hero-logo" width="72" height="72">
+                <img src="assets/logos/stamp-trace.svg" alt="" class="nav-logo hero-logo" width="39" height="72">
             </a>
             <p class="hero-tagline">Music &amp; Technology and CS undergrad @ Carnegie Mellon. Founder of the Athens Music Technology Forum. Pianist, composer, songwriter, and content creator.</p>
             <nav class="hero-nav" aria-label="Main navigation">
@@ -117,6 +114,22 @@
     </footer>
 
     <script src="nav.js"></script>
+    <script>
+        {
+            const hero = document.querySelector('.home-page .hero');
+            const copy = hero.querySelector('.hero-copy');
+            function fitHeroCopy() {
+                const scale = Math.min(1, hero.clientHeight * 0.8 / copy.offsetHeight);
+                copy.style.setProperty('--hero-scale', scale);
+            }
+
+            copy.dataset.fitted = '';
+            fitHeroCopy();
+            const observer = new ResizeObserver(fitHeroCopy);
+            observer.observe(hero);
+            observer.observe(copy);
+        }
+    </script>
     <script defer src="/_vercel/insights/script.js"></script>
     <script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
     <script defer src="/_vercel/speed-insights/script.js"></script>

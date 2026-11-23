@@ -1,19 +1,35 @@
-/* Homepage — a monochrome performance poster. */
-/* The menu is part of the cover, leaving the top of the page open. */
 .home-page {
-    max-width: 1160px;
-    padding-top: 4rem;
+    max-width: none;
+    min-height: 0;
+    padding: 0;
 }
 
 .home-page .hero {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    min-height: 700px;
-    padding: 2rem 0 0;
+    display: flex;
+    align-items: flex-end;
+    height: 100vh;
+    --hero-inset: clamp(1.25rem, 3.5vw, 4rem);
+    padding: 0 var(--hero-inset) min(3rem, 10vh);
     text-align: left;
-    isolation: isolate;
+}
+
+@media (min-width: 1000px) {
+    .home-page .hero {
+        padding-bottom: min(2.5rem, calc(var(--hero-inset) - 0.5rem), 10vh);
+    }
+}
+
+.hero-copy {
+    width: min(100%, 31rem);
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.hero-copy[data-fitted] {
+    max-height: none;
+    overflow: visible;
+    transform: scale(var(--hero-scale));
+    transform-origin: bottom left;
 }
 
 .home-visually-hidden {
@@ -27,15 +43,6 @@
     white-space: nowrap;
 }
 
-.hero-copy {
-    grid-column: 1;
-    grid-row: 1;
-    position: relative;
-    z-index: 1;
-    min-width: 0;
-    padding: 1rem 2rem 3rem 0;
-}
-
 .hero-brand {
     display: inline-flex;
     margin-bottom: 1.75rem;
@@ -45,7 +52,7 @@
 .hero-brand:hover { opacity: 0.65; }
 
 .hero-logo {
-    width: 72px;
+    width: auto;
     height: 72px;
     object-fit: contain;
 }
@@ -134,95 +141,9 @@
 
 .hero-theme-control .nav-theme-toggle:hover { border-color: var(--border); }
 
-.hero-art {
-    grid-column: 2;
-    grid-row: 1;
-    position: relative;
-    align-self: end;
-    height: 620px;
-    min-width: 0;
-    pointer-events: none;
-}
-
-.hero-performer {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: bottom;
-    filter: brightness(0) invert(0.96);
-}
-
-:root[data-theme='light'] .hero-performer {
-    filter: brightness(0);
-}
-
-@media (prefers-color-scheme: light) {
-    :root:not([data-theme='dark']) .hero-performer {
-        filter: brightness(0);
-    }
-}
-
 .home-page a:focus-visible {
     outline: 2px solid var(--text);
     outline-offset: 5px;
-}
-
-/* Desktop cover: the artwork is cropped by the hero, never by the asset. */
-@media (min-width: 1000px) {
-    .home-page {
-        max-width: none;
-        padding: 0;
-    }
-
-    .home-page .hero {
-        grid-template-columns: 45% 55%;
-        /* Allow the sixth full-size menu row the same breathing room. */
-        min-height: max(842px, 100svh);
-        padding: 0;
-        overflow: hidden;
-    }
-
-    .hero-copy {
-        width: 100%;
-        max-width: 580px;
-        justify-self: start;
-        align-self: end;
-        padding: 5rem 2rem 3rem clamp(2rem, 3.5vw, 4rem);
-    }
-
-    .hero-art {
-        position: absolute;
-        inset: 0;
-        grid-column: auto;
-        grid-row: auto;
-        height: 100%;
-    }
-
-    .hero-performer {
-        position: absolute;
-        top: clamp(48px, 10vh, 120px);
-        right: -3.5vw;
-        width: 70vw;
-        height: auto;
-    }
-
-}
-
-@media (min-width: 641px) and (max-width: 999px) {
-    .hero-art {
-        align-self: center;
-        height: auto;
-    }
-
-    .hero-performer {
-        height: auto;
-    }
-
-    .hero-copy {
-        padding-block: 2rem;
-    }
 }
 
 @media (max-width: 999px) {
@@ -243,32 +164,6 @@
         width: 1.2rem;
         height: 1.2rem;
     }
-}
-
-@media (max-width: 640px) {
-    .home-page {
-        padding: 4rem 1.25rem 3rem;
-    }
-
-    .home-page .hero {
-        grid-template-columns: 1fr;
-        min-height: 0;
-        padding-top: 2rem;
-    }
-
-    .hero-copy {
-        grid-column: 1;
-        padding: 0;
-    }
-
-    .hero-art {
-        grid-column: 1;
-        grid-row: 2;
-        height: 460px;
-        width: 100%;
-        margin-top: 2rem;
-    }
-
 }
 
 @media (prefers-reduced-motion: reduce) {

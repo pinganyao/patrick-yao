@@ -56,17 +56,6 @@
     display: block;
     height: 2.75rem;
     width: auto;
-    filter: invert(1);
-}
-
-:root[data-theme='light'] .contact-seal {
-    filter: none;
-}
-
-@media (prefers-color-scheme: light) {
-    .contact-seal {
-        filter: none;
-    }
 }
 
 .contact-intro {
@@ -222,17 +211,6 @@ a.contact-row:focus-visible {
     height: 8rem;
     width: auto;
     margin: 0 auto 1.5rem;
-    filter: invert(1);
-}
-
-:root[data-theme='light'] .logo-card-img {
-    filter: none;
-}
-
-@media (prefers-color-scheme: light) {
-    .logo-card-img {
-        filter: none;
-    }
 }
 
 .logo-card-text {
