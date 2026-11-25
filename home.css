@@ -7,7 +7,6 @@
 .home-page .hero {
     display: flex;
     align-items: flex-end;
-    container-type: inline-size;
     min-height: 100vh;
     min-height: 100svh;
     --hero-inset: clamp(1.25rem, 3.5vw, 4rem);
@@ -71,11 +70,12 @@
 
 .home-page .hero-tagline {
     margin: 0 0 1.75rem;
+    overflow-wrap: anywhere;
 }
 
 .hero-nav a {
     display: grid;
-    grid-template-columns: 2rem 1fr auto;
+    grid-template-columns: 2rem minmax(0, 1fr) auto;
     align-items: center;
     gap: 0.75rem;
     min-height: 55.8px;
@@ -96,6 +96,7 @@
     -webkit-text-stroke: 0.2px currentColor;
     line-height: 1.4;
     letter-spacing: 0.01em;
+    overflow-wrap: anywhere;
     transition: transform 200ms ease;
 }
 
@@ -166,35 +167,6 @@
     .home-page .hero-social-icon {
         width: 1.2rem;
         height: 1.2rem;
-    }
-}
-
-@container (width < 31rem) {
-    .hero-brand {
-        margin-bottom: 1rem;
-    }
-
-    .hero-logo {
-        height: 66px;
-    }
-
-    .home-page .hero-tagline {
-        margin-bottom: 1rem;
-        line-height: 1.5;
-        overflow-wrap: anywhere;
-    }
-
-    .hero-nav a {
-        grid-template-columns: 1.5rem minmax(0, 1fr) auto;
-        min-height: 48px;
-    }
-
-    .hero-nav-label {
-        overflow-wrap: anywhere;
-    }
-
-    .hero-utilities {
-        margin-top: 1rem;
     }
 }
 
