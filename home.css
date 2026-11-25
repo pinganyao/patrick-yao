@@ -7,29 +7,37 @@
 .home-page .hero {
     display: flex;
     align-items: flex-end;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100svh;
     --hero-inset: clamp(1.25rem, 3.5vw, 4rem);
-    padding: 0 var(--hero-inset) min(3rem, 10vh);
+    padding: var(--hero-inset);
     text-align: left;
-}
-
-@media (min-width: 1000px) {
-    .home-page .hero {
-        padding-bottom: min(2.5rem, calc(var(--hero-inset) - 0.5rem), 10vh);
-    }
 }
 
 .hero-copy {
     width: min(100%, 31rem);
-    max-height: 100%;
-    overflow-y: auto;
+    margin-inline: auto;
 }
 
-.hero-copy[data-fitted] {
-    max-height: none;
-    overflow: visible;
-    transform: scale(var(--hero-scale));
-    transform-origin: bottom left;
+@media (min-width: 1000px) {
+    .home-page .hero {
+        height: 100vh;
+        min-height: 0;
+        padding-block: 0 min(2.5rem, calc(var(--hero-inset) - 0.5rem), 10vh);
+    }
+
+    .hero-copy {
+        margin-inline: 0;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+
+    .hero-copy[data-fitted] {
+        max-height: none;
+        overflow: visible;
+        transform: scale(var(--hero-scale));
+        transform-origin: bottom left;
+    }
 }
 
 .home-visually-hidden {
