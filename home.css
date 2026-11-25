@@ -7,19 +7,20 @@
 .home-page .hero {
     display: flex;
     align-items: flex-end;
+    container-type: inline-size;
     min-height: 100vh;
     min-height: 100svh;
     --hero-inset: clamp(1.25rem, 3.5vw, 4rem);
-    padding: var(--hero-inset);
+    padding: clamp(2.75rem, 12vh, 6rem) var(--hero-inset) var(--hero-inset);
+    padding-top: clamp(2.75rem, 12svh, 6rem);
     text-align: left;
 }
 
 .hero-copy {
     width: min(100%, 31rem);
-    margin-inline: auto;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1000px) and (min-height: 600px) {
     .home-page .hero {
         height: 100vh;
         min-height: 0;
@@ -27,7 +28,6 @@
     }
 
     .hero-copy {
-        margin-inline: 0;
         max-height: 100%;
         overflow-y: auto;
     }
@@ -117,6 +117,7 @@
 
 .hero-utilities {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
@@ -125,9 +126,8 @@
 
 .home-page .hero-social {
     justify-content: flex-end;
-    flex-wrap: nowrap;
     gap: 0.35rem;
-    margin: 0;
+    margin: 0 0 0 auto;
 }
 
 .home-page .hero-social-link {
@@ -163,14 +163,38 @@
         gap: 0;
     }
 
-    .home-page .hero-social-link {
-        width: 36px;
-        flex-shrink: 0;
-    }
-
     .home-page .hero-social-icon {
         width: 1.2rem;
         height: 1.2rem;
+    }
+}
+
+@container (width < 31rem) {
+    .hero-brand {
+        margin-bottom: 1rem;
+    }
+
+    .hero-logo {
+        height: 66px;
+    }
+
+    .home-page .hero-tagline {
+        margin-bottom: 1rem;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    .hero-nav a {
+        grid-template-columns: 1.5rem minmax(0, 1fr) auto;
+        min-height: 48px;
+    }
+
+    .hero-nav-label {
+        overflow-wrap: anywhere;
+    }
+
+    .hero-utilities {
+        margin-top: 1rem;
     }
 }
 
